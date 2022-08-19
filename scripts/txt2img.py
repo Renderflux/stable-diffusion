@@ -81,7 +81,7 @@ def sample(
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model = model.to(device)
 
-    if opt.plms:
+    if plms:
         sampler = PLMSSampler(model)
     else:
         sampler = DDIMSampler(model)
