@@ -107,7 +107,7 @@ def sample(
     grid_count = len(os.listdir(outpath)) - 1
 
     start_code = None
-    if opt.fixed_code:
+    if fixed_code:
         start_code = torch.randn([samples, channel, height // f, width // f], device=device)
 
     precision_scope = autocast if precision=="autocast" else nullcontext
